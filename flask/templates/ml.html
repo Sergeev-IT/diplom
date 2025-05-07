@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Предсказание машинного обучения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f2f5;
+            margin: 0;
+            padding: 40px;
+        }
+        form {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        input[type="number"], button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<form method="POST">
+    <h1>Предсказание с помощью модели машинного обучения</h1>
+    <h2>Введите значения признаков</h2>
+    
+    <!-- <input type="number" step="any" name="feature1" placeholder="Соотношение матрица-наполнитель" required> -->
+    <input type="number" step="any" name="feature1" placeholder="Плотность, кг/м3" required>
+    <input type="number" step="any" name="feature2" placeholder="модуль упругости, ГПа" required>
+    <input type="number" step="any" name="feature3" placeholder="Количество отвердителя, м.%" required>
+    <input type="number" step="any" name="feature4" placeholder="Содержание эпоксидных групп,%_2" required>
+    <!-- <input type="number" step="any" name="feature5" placeholder="Температура вспышки, С_2" required> -->
+    <!-- <input type="number" step="any" name="feature6" placeholder="Поверхностная плотность, г/м2" required> -->
+    <!-- <input type="number" step="any" name="feature7" placeholder="Модуль упругости при растяжении, ГПа" required> -->
+    <!-- <input type="number" step="any" name="feature8" placeholder="Прочность при растяжении, МПа" required> -->
+    <input type="number" step="any" name="feature9" placeholder="Потребление смолы, г/м2" required>
+    <!-- <input type="number" step="any" name="feature10" placeholder="Угол нашивки, град" required> -->
+    <input type="number" step="any" name="feature11" placeholder="Шаг нашивки" required>
+    <!-- <input type="number" step="any" name="feature12" placeholder="Плотность нашивки" required> -->
+
+    <button type="submit">Предсказать</button>
+
+    {% if prediction is not none %}
+        <div class="result">
+            Результат: {{ prediction }}
+        </div>
+    {% endif %}
+</form>
+
+</body>
+</html>
