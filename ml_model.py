@@ -125,4 +125,4 @@ for i, col in enumerate(target_columns):
 #     plt.savefig("predskazan.png")
 
 # # Сохраняем pipeline с моделью
-# joblib.dump(stacking_pipeline, 'stacking_pipeline.pkl')
+# joblib.dump(model, 'stacking_pipeline.pkl')
